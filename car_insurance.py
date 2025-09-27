@@ -2,6 +2,12 @@
 import streamlit as st
 import pandas as pd
 import joblib
+from imblearn.pipeline import  Pipeline
+from sklearn.impute import  SimpleImputer, KNNImputer
+from sklearn.preprocessing import  RobustScaler, OneHotEncoder, OrdinalEncoder
+from category_encoders import  BinaryEncoder
+from imblearn.over_sampling import  SMOTE
+from sklearn.neighbors import KNeighborsClassifier
 
 st.set_page_config(layout= 'wide', page_title= 'Car Insurance Project')
 
@@ -57,3 +63,4 @@ if st.button('Predict'):
 
     else:
         st.write('Claim Flag : YES')
+
